@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "AC - Language Translator",
+  "version": "1.0",
+  "description": "Translates selected text on a webpage into the user's chosen language.",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "https://translate.googleapis.com/",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "AC - Language Translator",
+    "default_popup": "popup.html"
+  }
+}
